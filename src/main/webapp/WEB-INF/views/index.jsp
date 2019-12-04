@@ -40,16 +40,51 @@
         </nav>
       </header>
 
-      <div class="message">
-          <a class="twitter-link" href="http://twitter.com/home/?status=I%20created%20a%20project%20with%20AWS%20CodeStar!%20%23AWS%20%23AWSCodeStar%20https%3A%2F%2Faws.amazon.com%2Fcodestar">
-              <img src="${tweetSvg}" alt="Tweet"/>
-          </a>
-        <div class="text">
-          <h1>Congratulations!</h1>
-          <h2>You just created a Java Spring web application.</h2>
-        </div>
-      </div>
-    </div>
+      <div class="container">
+		<div class="row">
+			<h4> Galeria Pajé </h4>
+		</div>
+		<hr>
+				<div class="row row-margin-bottom">
+				<div class="col-md-5 no-padding lib-item" data-category="view">
+					<div class="lib-panel">
+						<div class="row box-shadow">
+							<div class="col-md-6">
+								<img class="lib-img-show" src="https://inteligenciaeinovacao.com/wp-content/uploads/2014/10/tenis-shopping.jpg">
+							</div>
+							<div class="col-md-6">
+								<div class="lib-row lib-header">
+									Example library
+									<div class="lib-header-seperator"></div>
+								</div>
+								<div class="lib-row lib-desc">
+									Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-1"></div>
+				<div class="col-md-5 no-padding lib-item" data-category="ui">
+					<div class="lib-panel">
+						<div class="row box-shadow">
+							<div class="col-md-6">
+								<img class="lib-img" src="https://venilshop.files.wordpress.com/2010/08/galeria-rock-lj49.png">
+							</div>
+							<div class="col-md-6">
+								<div class="lib-row lib-header">
+									Example library
+									<div class="lib-header-seperator"></div>
+								</div>
+								<div class="lib-row lib-desc">
+									Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
 
     <footer>
       <p class="footer-contents">Designed and developed with <a href="https://aws.amazon.com/careers/devtools-jobs/">♥</a> in Seattle.</p>
