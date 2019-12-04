@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Semantic E-commerce</title>
     <meta name="description" content="" />
-
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <spring:url value="/resources/styles.css" var="stylesCss" />
   
 
@@ -14,7 +14,38 @@
     <link href="${gradientsCss}" rel="stylesheet">
   </head>
   <body class="">
-    <main role="main">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+          <img src="GaleriaPaje.png" height = "100" width = "180" alt="">
+        </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+        </li>
+        <li class="nav-item">
+			<p>
+			<a class="button" href="#" title="LogIn">
+					Log-in
+			</a>
+			</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="blank-space">
+  
+</div>
+<main role="main">
   <article class="card-60 social">
     <figure>
       <a class="ribbon-buy popular" href="#" title="Popular">
@@ -30,7 +61,7 @@ Nome da Loja
  
       <ul>
         <li>
-          <strong title="Type">Tipo de Produto:</strong>
+          <strong title="Type">Tipo:</strong>
             Tipo de Produto
         </li>
 		<li>
@@ -61,6 +92,6 @@ Nome da Loja
     </div>
     <!-- end .flex-content-->
   </article>
-</main>  
+</main>
 </body>
 </html>

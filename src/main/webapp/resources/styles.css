@@ -38,7 +38,9 @@ a,.user {
 a:hover {
   color: #5b5;
 }
-
+li.nav-item{
+	margin-right: 40px;
+}
 a.button {
 	display: inline-block;
 	text-align: center;
@@ -46,8 +48,14 @@ a.button {
 	font-weight: 600;
 	cursor: pointer;
 	line-height: 1;
-  background: #88d;
+	background: #88d;
+	color:#fff;
 }
+a.button:hover {
+	color: #5b5;
+	text-decoration:None;
+}
+
 p,
 li,
 time {
@@ -166,6 +174,9 @@ object-fit to re-frame images rather than just stretch and resize them  === */
     -o-object-fit: cover;
     object-fit: cover;
  }
+}
+.blank-space{
+	padding: 3.0rem;
 }
 .flex-content {
   display: -webkit-flex;
