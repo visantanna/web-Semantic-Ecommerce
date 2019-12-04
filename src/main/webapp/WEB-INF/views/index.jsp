@@ -8,6 +8,7 @@
     <meta name="description" content="" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <spring:url value="/resources/styles.css" var="stylesCss" />
+	<spring:url value="/resources/GaleriaPaje.png" var="navIcon" />
   
 
     <link href="${stylesCss}" rel="stylesheet">
@@ -17,7 +18,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
     <a class="navbar-brand" href="#">
-          <img src="GaleriaPaje.png" height = "100" width = "180" alt="">
+          <img src="${navIcon}" height = "100" width = "180" alt="">
         </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
