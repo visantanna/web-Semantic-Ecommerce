@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.business.ProductsBusiness;
 import com.example.demo.business.StoreBusiness;
@@ -29,9 +31,14 @@ public class ProductsController {
     public Product createNewProduct(@RequestBody  Product product){
            return productBusiness.createNewProduct(product);
     }
-    
     @GetMapping
-    public List<Product> listProductsFromStore(@RequestParam  String id){
-        return productBusiness.listProductsFromStore(id);
+    public ModelAndView productsPage(){
+    	ModelAndView view  = new ModelAndView("products");
+        return view;
+    }
+    @GetMapping(value = "list")
+    public List<Product> listProductsFromStore(@RequestParam(value = "id", required = false)  String id){
+    	List<Product> productsList = productBusiness.listProductsFromStore(id);
+    	return productsList;
     }
 }

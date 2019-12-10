@@ -1,7 +1,7 @@
 <html>
 <head>
-<link rel="stylesheet" href="navbar.css">
-<link rel="stylesheet" href="products.css">
+<link rel="stylesheet" href="/navbar.css">
+<link rel="stylesheet" href="/products.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
@@ -11,7 +11,7 @@
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
 		  <div class="container">
 		    <a class="navbar-brand" href="#">
-		          <img src="GaleriaPaje.png" height = "100" width = "180" alt="">
+		          <img src="/GaleriaPaje.png" height = "100" width = "180" alt="">
 		        </a>
 		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 		          <span class="navbar-toggler-icon"></span>
@@ -52,7 +52,7 @@
 			<div class="bottom-wrap">
 				<a href="" class="btn btn-sm btn-primary float-right">Order Now</a>	
 				<div class="price-wrap h5">
-					<span class="price-new">R$ {{ product.price }}</span> <del class="price-old">$1980</del>
+					<span class="price-new">R$ {{ product.price }}</span> 
 				</div> <!-- price-wrap.// -->
 			</div> <!-- bottom-wrap.// -->
 		</figure>
@@ -63,12 +63,12 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
     
-    const url = "http://localhost:8080/v1/product";
+    const url = "http://localhost:8080/v1/product/list";
     const vm =new Vue({
         el: '#app',
         created() {
-         	actual_url=window.location.href.split("/")
-         	actual_id = actual_url[actual_url.length-1]
+        	var url = new URL(window.location.href);
+        	var actual_id = url.searchParams.get("id");
           	this.listProductsFromStore(actual_id);
         },
         data: {
@@ -77,8 +77,26 @@
         },
         methods:{
         	listProductsFromStore(id_code){
-        		axios.get(url , {id: id_code}).then(response => {
-                    this.products_catalog = response.data
+        		console.log(id_code);
+        		axios.get(url).then(response => {
+                    var sublist;
+                    var formatted_list = [];
+                    var sublist;
+                    var index = 0;
+                    formatted_list = []
+                    for (value of response.data){
+                      if (index%3 == 0 ){
+                        if (sublist != undefined ){
+                          formatted_list.push(sublist)
+                        }
+                        sublist = new Array()
+                      }
+                      sublist.push(value)
+                      index++;
+                    }
+                    formatted_list.push(sublist)
+                    this.products_catalog = formatted_list;
+                    console.log(this.products_catalog);
                 })
         	}
         }
