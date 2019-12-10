@@ -1,0 +1,24 @@
+a:hover {
+  color: #5b5;
+}
+li.nav-item{
+	margin-right: 40px;
+}
+.blank-space{
+	padding: 3.0rem;
+}
+
+a.button {
+	display: inline-block;
+	text-align: center;
+	padding: 14px 24px;
+	font-weight: 600;
+	cursor: pointer;
+	line-height: 1;
+	background: #88d;
+	color:#fff;
+}
+a.button:hover {
+	color: #5b5;
+	text-decoration:None;
+}

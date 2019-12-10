@@ -1,0 +1,90 @@
+<html>
+<head>
+<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="products.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<!--<div th:replace="fragments/navbar :: head"></div> -->
+<div id="app">  
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+		  <div class="container">
+		    <a class="navbar-brand" href="#">
+		          <img src="GaleriaPaje.png" height = "100" width = "180" alt="">
+		        </a>
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		          <span class="navbar-toggler-icon"></span>
+		        </button>
+		    <div class="collapse navbar-collapse" id="navbarResponsive">
+		      <ul class="navbar-nav ml-auto">
+		        <li class="nav-item active">
+		          <a class="nav-link" href="#">Home
+		                <span class="sr-only">(current)</span>
+		              </a>
+		        </li>
+		        <li class="nav-item">
+					<p>
+					<a class="button" href="#" title="LogIn">
+							Log-in
+					</a>
+					</p>
+		        </li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+
+<!-- Page Content -->
+<div class="blank-space"></div>
+<div class="row" v-for= "line in products_catalog">
+	<div class="col-md-4" v-for= "product in line" >
+		<figure class="card card-product">
+			<div class="img-wrap"><img :src="product.productPhoto"></div>
+			<figcaption class="info-wrap">
+					<h4 class="title">{{ product.name }}</h4>
+					<p class="desc">{{ product.brand }}</p>
+					<div class="rating-wrap">
+						<div class="label-rating">132 reviews</div>
+						<div class="label-rating">154 orders </div>
+					</div> <!-- rating-wrap.// -->
+			</figcaption>
+			<div class="bottom-wrap">
+				<a href="" class="btn btn-sm btn-primary float-right">Order Now</a>	
+				<div class="price-wrap h5">
+					<span class="price-new">R$ {{ product.price }}</span> <del class="price-old">$1980</del>
+				</div> <!-- price-wrap.// -->
+			</div> <!-- bottom-wrap.// -->
+		</figure>
+	</div> <!-- col // -->
+</div>
+</div> <!-- row // -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    
+    const url = "http://localhost:8080/v1/product";
+    const vm =new Vue({
+        el: '#app',
+        created() {
+         	actual_url=window.location.href.split("/")
+         	actual_id = actual_url[actual_url.length-1]
+          	this.listProductsFromStore(actual_id);
+        },
+        data: {
+          products_catalog: [],
+          image:"data:image/png;base64,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"
+        },
+        methods:{
+        	listProductsFromStore(id_code){
+        		axios.get(url , {id: id_code}).then(response => {
+                    this.products_catalog = response.data
+                })
+        	}
+        }
+      });
+      
+    </script>
+</div> <!-- app // -->
+</body>
+</html>
