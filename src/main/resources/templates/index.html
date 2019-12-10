@@ -53,7 +53,7 @@
         <p>
           <a></a>
           <a></a>
-          <a class="button" @click="produtosPage(item.id)"  title="Loja">
+          <a class="button" :href="`/v1/product?id=${ item.id }`" title="Loja">
 					Visite a Loja
 			</a>
         </p>

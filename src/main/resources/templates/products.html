@@ -1,8 +1,10 @@
-<html>
+<!DOCTYPE html>
 <head>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="/navbar.css">
 <link rel="stylesheet" href="/products.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -19,7 +21,7 @@
 					<h4 class="title">{{ product.name }}</h4>
 					<p class="desc">{{ product.brand }}</p>
 					<div class="rating-wrap">
-						<div class="label-rating">132 coment·rios</div>
+						<div class="label-rating">132 coment√°rios</div>
 						<div class="label-rating">154 compras </div>
 					</div> <!-- rating-wrap.// -->
 			</figcaption>
@@ -51,8 +53,10 @@
         },
         methods:{
         	listProductsFromStore(id_code){
-        		console.log(id_code);
-        		axios.get(url).then(response => {
+        		params = {
+        		id: id_code
+        		}
+        		axios.get(url, {params}).then(response => {
                     var sublist;
                     var formatted_list = [];
                     var sublist;
