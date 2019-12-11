@@ -79,7 +79,7 @@
         	getCartData(){
         		if(localStorage.cart  === "undefined"){
         			this.products = [];
-                                localStorage.cart=JSON.stringify([]);
+                      localStorage.cart=JSON.stringify(this.products);
         		}
         		this.products = JSON.parse(localStorage.cart);
         	},
