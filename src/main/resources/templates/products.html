@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="/navbar.css">
-<link rel="stylesheet" href="/products.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+	<meta charset="UTF-8">
+	<!--/*/ <th:block th:include="fragments/navbar.html :: head"></th:block> /*/-->
+	<link rel="stylesheet" href="/products.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 
-<div th:replace="fragments/navbar :: head"></div> 
+<div th:replace="fragments/navbar :: nav"></div> 
 <div id="app">  
 
 <!-- Page Content -->
@@ -26,7 +25,7 @@
 					</div> <!-- rating-wrap.// -->
 			</figcaption>
 			<div class="bottom-wrap">
-				<a href="" class="btn btn-sm btn-primary float-right">Order Now</a>	
+				<a href="#" class="btn btn-sm btn-primary float-right" @click="addItemToCart(product)">Comprar</a>	
 				<div class="price-wrap h5">
 					<span class="price-new">R$ {{ product.price }}</span> 
 				</div> <!-- price-wrap.// -->
@@ -76,6 +75,17 @@
                     this.products_catalog = formatted_list;
                     console.log(this.products_catalog);
                 })
+        	},
+        	addItemToCart(product){
+        		if (typeof localStorage.cart === "undefined") {
+        			localStorage.cart = "";
+        		}
+        		cart_list= [];
+        		if (localStorage.cart != "")
+        			cart_list=JSON.parse(localStorage.cart);
+        		cart_list.push(product);
+        		localStorage.cart = JSON.stringify(cart_list);
+        		vm2.getCartData();
         	}
         }
       });
