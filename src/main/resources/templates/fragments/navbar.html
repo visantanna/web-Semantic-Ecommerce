@@ -77,8 +77,9 @@
         },
         methods:{
         	getCartData(){
-        		if(localStorage.cart  === "undefined"){
+        		if(typeof localStorage.cart  === "undefined"){
         			this.products = [];
+                    localStorage.cart=JSON.stringify(this.products);
         		}
         		this.products = JSON.parse(localStorage.cart);
         	},
