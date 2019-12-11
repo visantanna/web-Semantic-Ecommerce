@@ -1,0 +1,1198 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org#"
+     xml:base="http://www.semanticweb.org"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:www="http://www.semanticweb.org/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org#isFromCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org#isFromCategory">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Group"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/EndsAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/EndsAt">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/leadsTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#PathElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/PathChange"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/belongsTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Group"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/composes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/composes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ShopItem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Invoice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/includes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/includes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ShopItem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/#Product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isLocatedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Store"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/#Corridor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isOfBrand -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isOfBrand">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Brand"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isPartOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Corridor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Floor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leadsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leadsTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/PathChange"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/#PathElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/looksFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/looksFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/makes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/makes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ShopItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/offers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/offers">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Store"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/#Product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/operatesIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/operatesIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Company"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/BusinessSegment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/represents -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/represents">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Store"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Company"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org#CategoryID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org#CategoryID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Category"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org#CategoryName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org#CategoryName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Category"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org#color -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org#color">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/productInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org#loggedIn -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org#loggedIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org#productPhoto -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org#productPhoto">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org#size -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org#size">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/productInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org#storeLink -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org#storeLink">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Store"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org#storePhoto -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org#storePhoto">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Store"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org#userLogin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org#userLogin">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/GroupID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/GroupID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Category"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Group"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/GroupName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/GroupName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Category"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Group"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/InvoiceID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/InvoiceID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Invoice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amount">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Invoice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/box -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/box">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Store"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/brandID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/brandID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Brand"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/brandName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/brandName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Brand"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/businessID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/businessID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BusinessSegment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/businessName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/businessName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BusinessSegment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/companyID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/companyID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/companyName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/companyName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dateOfBirth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dateOfBirth">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/depthInCm -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/depthInCm">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/productInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/gender">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/heightInCm -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/heightInCm">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/productInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/installments -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/installments">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Invoice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/length -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/length">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#PathElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/material -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/material">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/productInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/noTurn -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/noTurn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/PathChange"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/password -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/password">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pathChangeId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pathChangeId">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/PathChange"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pathElementID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pathElementID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#PathElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pathElementName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pathElementName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#PathElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/productID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/productID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/productInfo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/productInfo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/productName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/productName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/quantity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/quantity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ShopItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/stockQuantity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/stockQuantity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/storeID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/storeID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Store"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/storeName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/storeName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Store"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/turnLeft -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/turnLeft">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/PathChange"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/turnRight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/turnRight">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/PathChange"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/unitPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/unitPrice">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/userID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/userID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/userName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/userName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/weightInKg -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/weightInKg">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/productInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/widthInCm -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/widthInCm">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/productInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org#WC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org#WC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/#PathElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Brand -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Brand"/>
+    
+
+
+    <!-- http://www.semanticweb.org/BusinessSegment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/BusinessSegment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Category -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Category"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Company -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Company"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Floor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Floor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/#PathElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Group -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Group"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Invoice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Invoice"/>
+    
+
+
+    <!-- http://www.semanticweb.org/PathChange -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/PathChange"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ShopItem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ShopItem"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Stairway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Stairway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/#PathElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/#Corridor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/#Corridor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/#PathElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/#Exit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/#Exit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/#PathElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/#PathElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/#PathElement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/#Product -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/#Product"/>
+    
+
+
+    <!-- http://www.semanticweb.org/#StartPoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/#StartPoint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/PathChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/#Store -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/#Store"/>
+    
+
+
+    <!-- http://www.semanticweb.org/#User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/#User"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org#BR000000001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#BR000000001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Brand"/>
+        <www:brandID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000001</www:brandID>
+        <www:brandName>Samsung</www:brandName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#BR000000002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#BR000000002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Brand"/>
+        <www:brandID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000002</www:brandID>
+        <www:brandName>LG</www:brandName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#BR000000003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#BR000000003">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Brand"/>
+        <www:brandID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000003</www:brandID>
+        <www:brandName>Motorola</www:brandName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#BR000000004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#BR000000004">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Brand"/>
+        <www:brandID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000004</www:brandID>
+        <www:brandName>Pitbull Jeans</www:brandName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#BR000000005 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#BR000000005">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Brand"/>
+        <www:brandID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000005</www:brandID>
+        <www:brandName>Estrela</www:brandName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#BS000000001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#BS000000001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BusinessSegment"/>
+        <www:businessID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000001</www:businessID>
+        <www:businessName>Comércio varejista</www:businessName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#BS000000002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#BS000000002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BusinessSegment"/>
+        <www:businessID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000002</www:businessID>
+        <www:businessName>Estética</www:businessName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#CA000000001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#CA000000001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Category"/>
+        <CategoryID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000001</CategoryID>
+        <CategoryName>Eletrônicos</CategoryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#CA000000002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#CA000000002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Category"/>
+        <CategoryID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000002</CategoryID>
+        <CategoryName>Roupas</CategoryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#CA000000003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#CA000000003">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Category"/>
+        <CategoryID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000003</CategoryID>
+        <CategoryName>Brinquedos</CategoryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#CA000000004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#CA000000004">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Category"/>
+        <CategoryID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000004</CategoryID>
+        <CategoryName>Cabelo e Maquiagem</CategoryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#CP000000001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#CP000000001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Company"/>
+        <www:companyID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000001</www:companyID>
+        <www:companyName>NOVATEC Eletrônicos</www:companyName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#CP000000002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#CP000000002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Company"/>
+        <www:companyID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000002</www:companyID>
+        <www:companyName>Juliana Modas</www:companyName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#CP000000003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#CP000000003">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Company"/>
+        <www:companyID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000003</www:companyID>
+        <www:companyName>Brinkdeira</www:companyName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#CP000000004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#CP000000004">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Company"/>
+        <www:companyID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000004</www:companyID>
+        <www:companyName>Suzy Hair</www:companyName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#GR000000001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#GR000000001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Group"/>
+        <isFromCategory rdf:resource="http://www.semanticweb.org#CA000000001"/>
+        <www:GroupID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000005</www:GroupID>
+        <www:GroupName>Celulares</www:GroupName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#GR000000002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#GR000000002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Group"/>
+        <isFromCategory rdf:resource="http://www.semanticweb.org#CA000000001"/>
+        <www:GroupID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000006</www:GroupID>
+        <www:GroupName>TV</www:GroupName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#GR000000003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#GR000000003">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Group"/>
+        <isFromCategory rdf:resource="http://www.semanticweb.org#CA000000002"/>
+        <www:GroupID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000007</www:GroupID>
+        <www:GroupName>Camisetas</www:GroupName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#GR000000004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#GR000000004">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Group"/>
+        <isFromCategory rdf:resource="http://www.semanticweb.org#CA000000003"/>
+        <www:GroupID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000008</www:GroupID>
+        <www:GroupName>Brinquedos</www:GroupName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#GR000000005 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#GR000000005">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Group"/>
+        <isFromCategory rdf:resource="http://www.semanticweb.org#CA000000004"/>
+        <www:GroupID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000009</www:GroupID>
+        <www:GroupName>Cortes Masculinos</www:GroupName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#PR000000001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#PR000000001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#Product"/>
+        <www:belongsTo rdf:resource="http://www.semanticweb.org#GR000000001"/>
+        <www:isOfBrand rdf:resource="http://www.semanticweb.org#BR000000001"/>
+        <color>Cinza</color>
+        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodoproduto01.jpg</productPhoto>
+        <www:productID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000001</www:productID>
+        <www:productName>Smartphone Samsung Galaxy A50</www:productName>
+        <www:stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</www:stockQuantity>
+        <www:unitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1199.0</www:unitPrice>
+        <www:weightInKg rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.2</www:weightInKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#PR000000002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#PR000000002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#Product"/>
+        <www:belongsTo rdf:resource="http://www.semanticweb.org#GR000000001"/>
+        <www:isOfBrand rdf:resource="http://www.semanticweb.org#BR000000003"/>
+        <color>Preto</color>
+        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodoproduto02.jpg</productPhoto>
+        <www:productID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000002</www:productID>
+        <www:productName>Smartphone Motorola Moto G G8</www:productName>
+        <www:stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</www:stockQuantity>
+        <www:unitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1479.5</www:unitPrice>
+        <www:weightInKg rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.25</www:weightInKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#PR000000003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#PR000000003">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#Product"/>
+        <www:belongsTo rdf:resource="http://www.semanticweb.org#GR000000002"/>
+        <www:isOfBrand rdf:resource="http://www.semanticweb.org#BR000000002"/>
+        <color>Preto</color>
+        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodoproduto03.jpg</productPhoto>
+        <www:productID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000003</www:productID>
+        <www:productName>SmartTV LG LED 43 ThinQ</www:productName>
+        <www:stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</www:stockQuantity>
+        <www:unitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1349.0</www:unitPrice>
+        <www:weightInKg rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.0</www:weightInKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#PR000000004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#PR000000004">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#Product"/>
+        <www:belongsTo rdf:resource="http://www.semanticweb.org#GR000000002"/>
+        <www:isOfBrand rdf:resource="http://www.semanticweb.org#BR000000001"/>
+        <color>Preto</color>
+        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodoproduto04.jpg</productPhoto>
+        <www:productID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000004</www:productID>
+        <www:productName>SmartTV Samsung LED 50</www:productName>
+        <www:stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</www:stockQuantity>
+        <www:unitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1950.0</www:unitPrice>
+        <www:weightInKg rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</www:weightInKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#PR000000005 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#PR000000005">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#Product"/>
+        <www:belongsTo rdf:resource="http://www.semanticweb.org#GR000000003"/>
+        <www:isOfBrand rdf:resource="http://www.semanticweb.org#BR000000004"/>
+        <color>Azul</color>
+        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodoproduto05.jpg</productPhoto>
+        <size>M</size>
+        <www:productID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000005</www:productID>
+        <www:productName>Camiseta Polo Masculina</www:productName>
+        <www:stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</www:stockQuantity>
+        <www:unitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">70.0</www:unitPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#PR000000006 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#PR000000006">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#Product"/>
+        <www:belongsTo rdf:resource="http://www.semanticweb.org#GR000000004"/>
+        <www:isOfBrand rdf:resource="http://www.semanticweb.org#BR000000005"/>
+        <color>Vermelho</color>
+        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodoproduto06.jpg</productPhoto>
+        <www:productID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000006</www:productID>
+        <www:productName>Carrinho de controle remoto</www:productName>
+        <www:stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</www:stockQuantity>
+        <www:unitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">40.0</www:unitPrice>
+        <www:weightInKg rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.3</www:weightInKg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#PR000000007 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#PR000000007">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#Product"/>
+        <www:belongsTo rdf:resource="http://www.semanticweb.org#GR000000005"/>
+        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodoproduto07.jpg</productPhoto>
+        <www:productID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000007</www:productID>
+        <www:productName>Corte de cabelo masculino adulto</www:productName>
+        <www:unitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">40.0</www:unitPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#PR000000008 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#PR000000008">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#Product"/>
+        <www:belongsTo rdf:resource="http://www.semanticweb.org#GR000000005"/>
+        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodoproduto08.jpg</productPhoto>
+        <www:productID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000008</www:productID>
+        <www:productName>Corte de cabelo infantil</www:productName>
+        <www:unitPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.0</www:unitPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#ST000000001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#ST000000001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#Store"/>
+        <www:offers rdf:resource="http://www.semanticweb.org#PR000000001"/>
+        <www:offers rdf:resource="http://www.semanticweb.org#PR000000003"/>
+        <www:represents rdf:resource="http://www.semanticweb.org#CP000000001"/>
+        <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja01.com</storeLink>
+        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja01.jpg</storePhoto>
+        <www:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000001</www:storeID>
+        <www:storeName>MD Tecnologia</www:storeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#ST000000002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#ST000000002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#Store"/>
+        <www:offers rdf:resource="http://www.semanticweb.org#PR000000002"/>
+        <www:offers rdf:resource="http://www.semanticweb.org#PR000000004"/>
+        <www:represents rdf:resource="http://www.semanticweb.org#CP000000001"/>
+        <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja02.com</storeLink>
+        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja02.jpg</storePhoto>
+        <www:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000002</www:storeID>
+        <www:storeName>GZ Eletrônicos</www:storeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#ST000000003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#ST000000003">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#Store"/>
+        <www:offers rdf:resource="http://www.semanticweb.org#PR000000005"/>
+        <www:represents rdf:resource="http://www.semanticweb.org#CP000000002"/>
+        <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja03.com</storeLink>
+        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja03.jpg</storePhoto>
+        <www:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000003</www:storeID>
+        <www:storeName>Juliana Modas</www:storeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#ST000000004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#ST000000004">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#Store"/>
+        <www:offers rdf:resource="http://www.semanticweb.org#PR000000007"/>
+        <www:offers rdf:resource="http://www.semanticweb.org#PR000000008"/>
+        <www:represents rdf:resource="http://www.semanticweb.org#CP000000004"/>
+        <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja04.com</storeLink>
+        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja04.jpg</storePhoto>
+        <www:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000004</www:storeID>
+        <www:storeName>Suzy Hair</www:storeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#ST000000005 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#ST000000005">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#Store"/>
+        <www:offers rdf:resource="http://www.semanticweb.org#PR000000006"/>
+        <www:represents rdf:resource="http://www.semanticweb.org#CP000000003"/>
+        <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja05.com</storeLink>
+        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja05.jpg</storePhoto>
+        <www:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000005</www:storeID>
+        <www:storeName>Brinkdeira</www:storeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#US000000001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#US000000001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#User"/>
+        <loggedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</loggedIn>
+        <userLogin>GuilhermeMedeiros</userLogin>
+        <www:dateOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2000-05-30T00:00:00</www:dateOfBirth>
+        <www:gender>Masculino</www:gender>
+        <www:password>1234</www:password>
+        <www:userID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000001</www:userID>
+        <www:userName>Guilherme Medeiros</www:userName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org#US000000002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org#US000000002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/#User"/>
+        <loggedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</loggedIn>
+        <userLogin>Ana01</userLogin>
+        <www:dateOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1980-09-05T00:00:00</www:dateOfBirth>
+        <www:gender>Feminino</www:gender>
+        <www:password>1234</www:password>
+        <www:userID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000001</www:userID>
+        <www:userName>Ana Beatriz</www:userName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/noTurn"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/turnLeft"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/turnRight"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
