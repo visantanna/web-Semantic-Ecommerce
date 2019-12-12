@@ -1,10 +1,8 @@
 package com.example.demo;
-
-import org.apache.jena.ontology.OntModel;
-import org.apache.jena.ontology.OntModelSpec;
-import org.apache.jena.rdf.model.ModelFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.example.ontology.SparqlService;
 
 
 @SpringBootApplication
@@ -17,10 +15,8 @@ public class DemoApplication {
 	}
 	
 	private static void loadOwl() {
-		String path = "src/main/resources/EP_WS_RDFXML.owl" ;
-		OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM);
-		model.read(path);
-		model.write(System.out);
+		SparqlService.selectUsers();
+		SparqlService.selectStore();
 	}
 
 }
