@@ -8,6 +8,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.Store;
+import com.example.ontology.SparqlService;
 
 @Service
 public class StoreBusiness {
@@ -17,13 +18,14 @@ public class StoreBusiness {
 	Store blackBull = new Store("4811d97a1a4711ea978f2e728ce88125", "Roupas" , "BlackBull" , "Desde o início, temos focado na oferta de roupas prontas para usar e de qualidade para todas as pessoas. Atualmente, estamos ampliando essa visão para oferecer roupas bonitas e sustentáveis a um nível de preço conveniente para todos.", "https://www.galeriadaarquitetura.com.br/Img/projeto/SF1/3034/blackbull4107.jpg", "2ºAndar , Loja 3");
 	Store lojaDoMusico = new Store("4e71e0d01a4711ea978f2e728ce88125", "Instrumentos" , "Loja do músico" , "Temos Grande disponibilidade de Acessórios como: Captadores, Pontes, Encordoamentos, Tarraxas, Capotrastes, Palhetas, Bocais, Afinadores, Clamps, Correias e etc.", "http://www.islmusic.com.br/wp-content/gallery/nova-importadora-sao-luiz/Fotos-Calend%C3%A1rio-Editadas-4-copiar.jpg", "2ºAndar , Loja 7");
 	ArrayList<Store> listStores = new ArrayList<Store>(Arrays.asList(nbaStore,surfTrip ,deal,blackBull,lojaDoMusico));
-
+	
 	public Store createNewStore(Store store) {
 		store.setId( UUID.randomUUID().toString());
 		listStores.add(store);
 		return store;
 	}
 	public List<Store> listStores(){
+		listStores.addAll(SparqlService.selectStore());
 		return listStores;
 	}
 }

@@ -11,12 +11,13 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		loadOwl();
 		SpringApplication.run(DemoApplication.class, args);
+		SparqlService.selectStore();
 		
 	}
 	
 	private static void loadOwl() {
 		SparqlService.selectUsers();
-		SparqlService.selectStore();
+		
 	}
 
 }
