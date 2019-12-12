@@ -7,7 +7,7 @@ PREFIX ep:  <http://www.semanticweb.org/ACH2098/>
 PREFIX epsx:  <http://www.semanticweb.org/ACH2098#>
 PREFIX epx:  <http://www.semanticweb.org/ACH2098/#>
 
-SELECT   ?store ?activity ?isLocatedIn ?offers ?represents ?storeLink ?storePhoto ?storeID ?storeName
+SELECT   ?store ?activity ?isLocatedIn ?represents ?storeLink ?storePhoto ?storeID ?storeName
 {
 ?store rdf:type epx:Store;
 epsx:activity ?activity;
