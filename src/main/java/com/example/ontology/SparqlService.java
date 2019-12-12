@@ -1,6 +1,9 @@
 package com.example.ontology;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
@@ -12,6 +15,9 @@ import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import com.example.demo.controler.StoreController;
+import com.example.demo.dto.Store;
 
 public class SparqlService {
 	static private  OntModel model = OwlService.getOwlModel();
@@ -132,14 +138,39 @@ public class SparqlService {
 			System.out.println(json);
 		}
 	}
-	public static void selectStore() {
+	public static ArrayList<Store> selectStore() {
 		String queryString = queryStore();
 		Query query = QueryFactory.create(queryString);
 		try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
 			ResultSet results = qexec.execSelect();
-			printingResults(results);
+			return loadStore(results);
 		}
 		
+	}
+	
+	public static ArrayList<Store>  loadStore(ResultSet results) {
+		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+		ResultSetFormatter.outputAsJSON(outputStream, results);
+		String json = new String(outputStream.toByteArray());
+		JSONObject obj = new JSONObject(json);
+		
+		JSONArray arr = obj.getJSONObject("results").getJSONArray("bindings");
+		ArrayList<Store>  owlStores = new ArrayList<Store>();
+		for (int i = 0; i < arr.length(); i++)
+		{
+			 String id = arr.getJSONObject(i).getJSONObject("storeID").getString("value");
+			 String type = arr.getJSONObject(i).getJSONObject("activity").getString("value");
+			 String name = arr.getJSONObject(i).getJSONObject("storeName").getString("value");
+			 String description = "store : "+ arr.getJSONObject(i).getJSONObject("store").getString("value")+"\n"+
+					 				"Represents : "+ arr.getJSONObject(i).getJSONObject("represents").getString("value")+"\n"+
+					 				"Offers : "+ arr.getJSONObject(i).getJSONObject("offers").getString("value")+"\n"+
+					 				"storeLink : "+ arr.getJSONObject(i).getJSONObject("storeLink").getString("value")+"\n";
+			String store_photo = arr.getJSONObject(i).getJSONObject("storePhoto").getString("value");
+			String location = arr.getJSONObject(i).getJSONObject("isLocatedIn").getString("value");
+			Store store = new Store(id, type, name, description, store_photo, location);
+			owlStores.add(store);
+		}
+		return owlStores;
 	}
 
 }
