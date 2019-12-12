@@ -38,7 +38,7 @@
         <li class="dropdown" >
           <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-expanded="false">  Carrinho </a>
            <ul class="dropdown-menu dropdown-cart" role="menu" id="cartapp">
-	            <li v-for="element in products">
+	            <li v-for="(element,index) in products">
 	                  <span class="item">
 	                    <span class="item-left">
 	                        <img :src="element.productPhoto"  height = "40px" width = "40px" alt="" />
@@ -48,7 +48,7 @@
 	                        </span>
 	                    </span>
 	                    <span class="item-right">
-	                        <button class="btn btn-danger  fa fa-times" @click="removeItemFromCart(element)" ></button>
+	                        <button class="btn btn-danger  fa fa-times" @click="removeItemFromCart(index)" ></button>
 	                    </span>
 	                </span>
 	              </li>
@@ -83,11 +83,10 @@
         		}
         		this.products = JSON.parse(localStorage.cart);
         	},
-        	removeItemFromCart( product ){
+        	removeItemFromCart( product_index ){
         		old_products = JSON.parse(localStorage.cart)
-        		var new_cart =old_products.filter(function(prod){
-        			return prod.id != product.id;
-        		});
+        		old_products.splice(product_index , 1)
+        		new_cart = old_products
         		this.products = new_cart
         		localStorage.cart = JSON.stringify(new_cart);
         	}
