@@ -7,13 +7,12 @@ PREFIX ep:  <http://www.semanticweb.org/ACH2098/>
 PREFIX epsx:  <http://www.semanticweb.org/ACH2098#>
 PREFIX epx:  <http://www.semanticweb.org/ACH2098/#>
 
-SELECT   ?store ?activity ?CategoryName ?isLocatedIn ?offers ?represents ?storeLink ?storePhoto ?storeID ?storeName ?storeDesc
+SELECT   ?store ?activity ?CategoryName ?isLocatedIn ?represents ?storeLink ?storePhoto ?storeID ?storeName ?storeDesc
 {
 ?store rdf:type epx:Store .
 ?store epsx:activity ?activity .
 ?activity epsx:CategoryName ?CategoryName .
 ?store ep:isLocatedIn ?isLocatedIn .
-?store ep:offers ?offers .
 ?store ep:represents ?represents .
 ?store epsx:storeLink ?storeLink .
 ?store epsx:storePhoto ?storePhoto .

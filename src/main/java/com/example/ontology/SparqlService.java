@@ -2,6 +2,7 @@ package com.example.ontology;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,7 +30,9 @@ public class SparqlService {
 	
 	static private String readQuery(String filename) {
     	StringBuffer sb = new StringBuffer();
-        try (FileReader reader = new FileReader(filename);
+    	File f = new File("");
+		
+        try (FileReader reader = new FileReader(f.getAbsolutePath()+"/"+filename);
              BufferedReader br = new BufferedReader(reader)) {
         	
             // read line by line
@@ -47,89 +50,15 @@ public class SparqlService {
 	static private  OntModel model = OwlService.getOwlModel();
 	
 	private static String queryUser() {
-		return "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" + 
-				"PREFIX owl: <http://www.w3.org/2002/07/owl#>\n" + 
-				"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" + 
-				"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n" + 
-				"PREFIX foaf:  <http://xmlns.com/foaf/0.1#>\n" + 
-				"PREFIX ep:  <"+OwlService.owlUri+"/>\n" + 
-				"PREFIX eps:  <"+OwlService.owlUri+">\n" + 
-				"PREFIX epsx:  <"+OwlService.owlUri+"#>\n" + 
-				"PREFIX epx:  <"+OwlService.owlUri+"/#>\n" + 
-				"\n" + 
-				"SELECT   ?ind ?name ?id ?on ?login ?pass ?birth ?gen    \n" + 
-				"{\n" + 
-				"?ind rdf:type epx:User;\n" + 
-				"ep:userName ?name;\n" + 
-				"ep:userID ?id;\n" + 
-				"epsx:loggedIn ?on;\n" + 
-				"epsx:userLogin ?login;\n" + 
-				"ep:password ?pass;\n" + 
-				"ep:dateOfBirth ?birth;\n" + 
-				"ep:gender ?gen\n" + 
-				"}\n" + 
-				"ORDER BY ASC(?ind)";
+		return readQuery("src/main/queries/users");	
 	}
 	
 	private static String queryStore() {
-		//return readQuery("src/main/queries/store/store");
-		return "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" + 
-				"PREFIX owl: <http://www.w3.org/2002/07/owl#>\n" + 
-				"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" + 
-				"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n" + 
-				"PREFIX foaf:  <http://xmlns.com/foaf/0.1#>\n" + 
-				"PREFIX ep:  <http://www.semanticweb.org/ACH2098/>\n" + 
-				"PREFIX epsx:  <http://www.semanticweb.org/ACH2098#>\n" + 
-				"PREFIX epx:  <http://www.semanticweb.org/ACH2098/#>\n" + 
-				"\n" + 
-				"SELECT   ?store ?activity ?CategoryName ?isLocatedIn ?offers ?represents ?storeLink ?storePhoto ?storeID ?storeName ?storeDesc\n" + 
-				"{\n" + 
-				"?store rdf:type epx:Store .\n" + 
-				"?store epsx:activity ?activity .\n" + 
-				"?activity epsx:CategoryName ?CategoryName .\n" + 
-				"?store ep:isLocatedIn ?isLocatedIn . \n" + 
-				"?store ep:represents ?represents .\n" + 
-				"?store epsx:storeLink ?storeLink .\n" + 
-				"?store epsx:storePhoto ?storePhoto . \n" + 
-				"?store ep:storeID ?storeID . \n" + 
-				"?store ep:storeName ?storeName . \n" + 
-				"?store epsx:storeDesc ?storeDesc\n" + 
-				";\n" + 
-				"}\n" + 
-				"ORDER BY ASC(?store)";
+		return readQuery("src/main/queries/store");		
 	}
-	
-	
+		
 	private static String queryProductByStore() {
-		//return readQuery("src/main/queries/store/store");
-		return "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" + 
-				"PREFIX owl: <http://www.w3.org/2002/07/owl#>\n" + 
-				"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" + 
-				"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n" + 
-				"PREFIX foaf:  <http://xmlns.com/foaf/0.1#>\n" + 
-				"PREFIX ep:  <http://www.semanticweb.org/ACH2098/>\n" + 
-				"PREFIX eps:  <http://www.semanticweb.org/ACH2098>\n" + 
-				"PREFIX epsx:  <http://www.semanticweb.org/ACH2098#>\n" + 
-				"PREFIX epx:  <http://www.semanticweb.org/ACH2098/#>\n" + 
-				"\n" + 
-				"\n" + 
-				"SELECT ?store  ?product ?storeID ?group  ?brand  ?brandName ?color ?productPhoto ?productID ?productName ?stockQuantity ?unitPrice ?weightInKg\n" + 
-				"{\n" + 
-				"?store rdf:type epx:Store; .\n" + 
-				"?store ep:storeID ?storeID .\n" + 
-				"?store ep:offers ?product .\n" + 
-				"?product ep:belongsTo ?group .\n" + 
-				"?product ep:isOfBrand ?brand .\n" + 
-				"?brand ep:brandName ?brandName .\n" + 
-				"?product epsx:color ?color .\n" + 
-				"?product epsx:productPhoto ?productPhoto .\n" + 
-				"?product ep:productID ?productID .\n" + 
-				"?product ep:productName ?productName . \n" + 
-				"?product ep:stockQuantity ?stockQuantity .\n" + 
-				"?product ep:unitPrice ?unitPrice . \n" + 
-				"?product ep:weightInKg ?weightInKg . \n" + 
-				"}\n" + 
-				"ORDER BY ASC(?store)";
+		return readQuery("src/main/queries/productByStore");	
 	}
 	public static void query1() {
 
@@ -170,10 +99,6 @@ public class SparqlService {
 		ResultSetFormatter.outputAsJSON(outputStream, results);
 		String json = new String(outputStream.toByteArray());
 		JSONObject obj = new JSONObject(json);
-		
-		//String user1 = obj.getJSONObject("results").getJSONArray("bindings").getJSONObject(0).getJSONObject("name").getString("value");
-		//String typeInd = obj.getJSONObject("results").getJSONArray("bindings").getJSONObject(0).getJSONObject("ind").getString("type");
-		
 		JSONArray arr = obj.getJSONObject("results").getJSONArray("bindings");
 		for (int i = 0; i < arr.length(); i++)
 		{
@@ -189,23 +114,13 @@ public class SparqlService {
 		return obj;
 	}
 	
-	private static void printingResults(ResultSet results) {
-		for (; results.hasNext();) {
-			// write to a ByteArrayOutputStream
-			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-			ResultSetFormatter.outputAsJSON(outputStream, results);
-			String json = new String(outputStream.toByteArray());
-			System.out.println(json);
-		}
-	}
 	public static ArrayList<Store> selectStore() {
 		String queryString = queryStore();
 		Query query = QueryFactory.create(queryString);
 		try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
 			ResultSet results = qexec.execSelect();
 			return loadListStore(results);
-		}
-		
+		}		
 	}
 	
 	public static ArrayList<Store>  loadListStore(ResultSet results) {
@@ -217,7 +132,9 @@ public class SparqlService {
 		
 		JSONArray arr = obj.getJSONObject("results").getJSONArray("bindings");
 		ArrayList<Store>  owlStores = new ArrayList<Store>();
+
 		//owlStores.addAll(StoreBusiness.mockStores());
+
 		for (int i = 0; i < arr.length(); i++)
 		{
 			String id = arr.getJSONObject(i).getJSONObject("storeID").getString("value");
@@ -245,6 +162,7 @@ public class SparqlService {
 			
 			JSONArray arr = obj.getJSONObject("results").getJSONArray("bindings");
 			ArrayList<Product>  owlProducts = new ArrayList<Product>();
+
 			for (int i = 0; i < arr.length(); i++)
 				{	
 					String id = arr.getJSONObject(i).getJSONObject("productID").getString("value");
