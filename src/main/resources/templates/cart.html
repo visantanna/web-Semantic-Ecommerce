@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+  <head>
+  	<meta charset="UTF-8">
+  	<!--/*/ <th:block th:include="fragments/navbar.html :: head"></th:block> /*/-->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link href="/cart.css" rel="stylesheet">
+  </head>
+  <body>
+  
+<div th:replace="fragments/navbar :: nav"></div> 
+<medium>
+<div id="container" style="width:100%;">
+<div id="accordion" style="width:100%;">
+<div class="row" id = "app">
+        <div class="col-sm-4">
+		</div>
+		<div class="col-sm-4">
+		<div class="card border-info mb-3 text-center" v-show = "!comprado">
+			  <div class="card-header">
+			    <a class="card-link" data-toggle="collapse" href="#collapseSECOND">
+				<h5 class="card-title text-dark">Lista de Compras</h5>
+				</a>
+			  </div>
+			  <div id="collapseSECOND" class="collapse show" data-parent="#accordion">
+			    <div class="card-body">
+					<table class="table table-hover group table-striped">
+						<table class="table table-hover group table-striped">
+							<tbody>   
+							  <tr v-for= "item in cart">
+								<td>Produto: {{ item.name }}</td>
+								<td>Preço: {{ item.price }}</td>
+							 </tr>
+									
+							</tbody>
+							</table>         
+					          
+				     <div class="card-footer text-muted">
+							Total Value: {{ totalCost }}
+							<a href="#" @click="buyClicked" class="btn btn-sm btn-primary float-right" >Comprar</a>
+						
+					 </div>
+			 	</div>
+			  </div>
+			 </div>
+			 <div v-show = "comprado">
+				<h1 class=textoCompra>Comprado!!</h1>
+				<a href= "/" >Voltar para Lojas</a>
+			</div>
+			</div>
+			
+		<div class="col-sm-4">
+		</div>
+</div></div></medium></div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    
+    const vm =new Vue({
+        el: '#app',
+        created() {
+          this.getCartInfo()
+        },
+        data: {
+        	cart: [],
+        	comprado : false,
+        	totalCost: 0.0
+        },
+        methods:{
+        	getCartInfo(){
+        		if(typeof localStorage.cart  === "undefined"){
+        			this.products = [];
+                    localStorage.cart=JSON.stringify(this.products);
+        		}
+        		this.cart = JSON.parse(localStorage.cart);
+        		this.getTotalCost();
+        	},
+        	getTotalCost(){
+        		this.totalCost = 0.0;
+        		for (item of this.cart){
+        			this.totalCost += item.price
+        		}
+        			
+        	},
+        	buyClicked(){
+        		localStorage.cart=JSON.stringify([]);
+        		this.getCartInfo();
+        		this.getTotalCost();
+        		this.comprado = true;
+        	}
+        }
+      });
+      
+    </script>
+</html>

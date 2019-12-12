@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.business.CartBusiness;
 import com.example.demo.dto.Product;
@@ -20,13 +21,9 @@ public class CartController {
 	@Autowired
 	private CartBusiness cartBussiness;
 	
-	@PostMapping
-	public void insertProductToCart(@RequestBody  Product product) {
-		cartBussiness.addProductToList(product);
-	}
-	
 	@GetMapping
-	public List<Product> getCartList(){
-		return null;
+	public ModelAndView CartPage(){
+		ModelAndView view  = new ModelAndView("cart");
+		return view;
 	}
 }
