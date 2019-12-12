@@ -263,6 +263,15 @@
 
 
 
+    <!-- http://www.semanticweb.org/ACH2098#storeDesc -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ACH2098#storeDesc">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ACH2098/#Store"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+
     <!-- http://www.semanticweb.org/ACH2098#storeLink -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ACH2098#storeLink">
@@ -1269,7 +1278,7 @@
         <ACH2098:belongsTo rdf:resource="http://www.semanticweb.org/ACH2098#GR000000001"/>
         <ACH2098:isOfBrand rdf:resource="http://www.semanticweb.org/ACH2098#BR000000001"/>
         <color>Cinza</color>
-        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodoproduto01.jpg</productPhoto>
+        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ecommercesemantico.herokuapp.com/foto_produto1_A50.JPG</productPhoto>
         <ACH2098:productID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000001</ACH2098:productID>
         <ACH2098:productName>Smartphone Samsung Galaxy A50</ACH2098:productName>
         <ACH2098:stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</ACH2098:stockQuantity>
@@ -1286,7 +1295,7 @@
         <ACH2098:belongsTo rdf:resource="http://www.semanticweb.org/ACH2098#GR000000001"/>
         <ACH2098:isOfBrand rdf:resource="http://www.semanticweb.org/ACH2098#BR000000003"/>
         <color>Preto</color>
-        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodoproduto02.jpg</productPhoto>
+        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ecommercesemantico.herokuapp.com/foto_produto2_G8.JPG</productPhoto>
         <ACH2098:productID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000002</ACH2098:productID>
         <ACH2098:productName>Smartphone Motorola Moto G G8</ACH2098:productName>
         <ACH2098:stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</ACH2098:stockQuantity>
@@ -1303,7 +1312,7 @@
         <ACH2098:belongsTo rdf:resource="http://www.semanticweb.org/ACH2098#GR000000002"/>
         <ACH2098:isOfBrand rdf:resource="http://www.semanticweb.org/ACH2098#BR000000002"/>
         <color>Preto</color>
-        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodoproduto03.jpg</productPhoto>
+        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ecommercesemantico.herokuapp.com/foto_produto3_tvlg.jpg</productPhoto>
         <ACH2098:productID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000003</ACH2098:productID>
         <ACH2098:productName>SmartTV LG LED 43 ThinQ</ACH2098:productName>
         <ACH2098:stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</ACH2098:stockQuantity>
@@ -1320,7 +1329,7 @@
         <ACH2098:belongsTo rdf:resource="http://www.semanticweb.org/ACH2098#GR000000002"/>
         <ACH2098:isOfBrand rdf:resource="http://www.semanticweb.org/ACH2098#BR000000001"/>
         <color>Preto</color>
-        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodoproduto04.jpg</productPhoto>
+        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ecommercesemantico.herokuapp.com/foto_produto4_tvsamsung.jpg</productPhoto>
         <ACH2098:productID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000004</ACH2098:productID>
         <ACH2098:productName>SmartTV Samsung LED 50</ACH2098:productName>
         <ACH2098:stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ACH2098:stockQuantity>
@@ -1337,7 +1346,7 @@
         <ACH2098:belongsTo rdf:resource="http://www.semanticweb.org/ACH2098#GR000000003"/>
         <ACH2098:isOfBrand rdf:resource="http://www.semanticweb.org/ACH2098#BR000000004"/>
         <color>Azul</color>
-        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodoproduto05.jpg</productPhoto>
+        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ecommercesemantico.herokuapp.com/foto_produto5_camisa.jpg</productPhoto>
         <size>M</size>
         <ACH2098:productID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000005</ACH2098:productID>
         <ACH2098:productName>Camiseta Polo Masculina</ACH2098:productName>
@@ -1354,7 +1363,7 @@
         <ACH2098:belongsTo rdf:resource="http://www.semanticweb.org/ACH2098#GR000000004"/>
         <ACH2098:isOfBrand rdf:resource="http://www.semanticweb.org/ACH2098#BR000000005"/>
         <color>Vermelho</color>
-        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodoproduto06.jpg</productPhoto>
+        <productPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ecommercesemantico.herokuapp.com/foto_produto5_carrinho.jpg</productPhoto>
         <ACH2098:productID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000006</ACH2098:productID>
         <ACH2098:productName>Carrinho de controle remoto</ACH2098:productName>
         <ACH2098:stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</ACH2098:stockQuantity>
@@ -1410,8 +1419,9 @@
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000001"/>
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000003"/>
         <ACH2098:represents rdf:resource="http://www.semanticweb.org/ACH2098#CP000000001"/>
+        <storeDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Encontre os melhores eletrônicos na MD Tecnologia. Os melhores Smartphones, TVs e acessórios de informática ao seu alcance.</storeDesc>
         <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja01.com</storeLink>
-        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja01.jpg</storePhoto>
+        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ecommercesemantico.herokuapp.com/foto_loja1_MDTecnologia.jpg</storePhoto>
         <ACH2098:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000001</ACH2098:storeID>
         <ACH2098:storeName>MD Tecnologia</ACH2098:storeName>
     </owl:NamedIndividual>
@@ -1427,8 +1437,9 @@
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000002"/>
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000004"/>
         <ACH2098:represents rdf:resource="http://www.semanticweb.org/ACH2098#CP000000001"/>
+        <storeDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A GZ Eletrônicos oferece as melhores novidades do mercado com produtos certificados. Smartphones, TVs e acessórios de informática, tudo em um só lugar e com os melhores preços.</storeDesc>
         <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja02.com</storeLink>
-        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja02.jpg</storePhoto>
+        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ecommercesemantico.herokuapp.com/foto_loja2_GZ_Eletrônicos.jpg</storePhoto>
         <ACH2098:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000002</ACH2098:storeID>
         <ACH2098:storeName>GZ Eletrônicos</ACH2098:storeName>
     </owl:NamedIndividual>
@@ -1443,8 +1454,9 @@
         <ACH2098:isLocatedIn rdf:resource="http://www.semanticweb.org/ACH2098#CR000000009"/>
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000005"/>
         <ACH2098:represents rdf:resource="http://www.semanticweb.org/ACH2098#CP000000002"/>
+        <storeDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Os melhores presentes de vestuário você encontra na Juliana Modas. Moda masculina, feminina e infantil. Bom gosto e qualidade de materiais ao seu alcance.</storeDesc>
         <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja03.com</storeLink>
-        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja03.jpg</storePhoto>
+        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ecommercesemantico.herokuapp.com/foto_loja3_JulianaModas.jpg</storePhoto>
         <ACH2098:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000003</ACH2098:storeID>
         <ACH2098:storeName>Juliana Modas</ACH2098:storeName>
     </owl:NamedIndividual>
@@ -1460,8 +1472,9 @@
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000007"/>
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000008"/>
         <ACH2098:represents rdf:resource="http://www.semanticweb.org/ACH2098#CP000000004"/>
+        <storeDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Brinkdeira oferece excelentes opções de brinquedos diversos para as crianças e jovens. Loja com produtos seguros e de alta resistência para todos se divertirem à vontade.</storeDesc>
         <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja04.com</storeLink>
-        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja04.jpg</storePhoto>
+        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ecommercesemantico.herokuapp.com/foto_loja4_SuzyHair.jpg</storePhoto>
         <ACH2098:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000004</ACH2098:storeID>
         <ACH2098:storeName>Suzy Hair</ACH2098:storeName>
     </owl:NamedIndividual>
@@ -1476,8 +1489,9 @@
         <ACH2098:isLocatedIn rdf:resource="http://www.semanticweb.org/ACH2098#CR000000012"/>
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000006"/>
         <ACH2098:represents rdf:resource="http://www.semanticweb.org/ACH2098#CP000000003"/>
+        <storeDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Suzy Hair acredita que as grandes transformações começam com a sua autoestima. Por isso oferece diversos serviços de estética e beleza para os mais diversos públicos. Conheça nosso espaço.</storeDesc>
         <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja05.com</storeLink>
-        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja05.jpg</storePhoto>
+        <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ecommercesemantico.herokuapp.com/foto_loja5_Brinkdeira.jpg</storePhoto>
         <ACH2098:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000005</ACH2098:storeID>
         <ACH2098:storeName>Brinkdeira</ACH2098:storeName>
     </owl:NamedIndividual>
@@ -1514,46 +1528,49 @@
 
 
 
-        <!-- http://www.semanticweb.org/ACH2098#US000000003 -->
+    <!-- http://www.semanticweb.org/ACH2098#US000000003 -->
 
-        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ACH2098#US000000003">
-            <rdf:type rdf:resource="http://www.semanticweb.org/ACH2098/#User"/>
-            <loggedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</loggedIn>
-            <userLogin>joanad</userLogin>
-            <ACH2098:dateOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1980-09-05T00:00:00</ACH2098:dateOfBirth>
-            <ACH2098:gender>Feminino</ACH2098:gender>
-            <ACH2098:password>1234</ACH2098:password>
-            <ACH2098:userID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000003</ACH2098:userID>
-            <ACH2098:userName>Joana Darc</ACH2098:userName>
-        </owl:NamedIndividual>
-
-        <!-- http://www.semanticweb.org/ACH2098#US000000004 -->
-
-        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ACH2098#US000000004">
-            <rdf:type rdf:resource="http://www.semanticweb.org/ACH2098/#User"/>
-            <loggedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</loggedIn>
-            <userLogin>martinlk</userLogin>
-            <ACH2098:dateOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1983-07-05T00:00:00</ACH2098:dateOfBirth>
-            <ACH2098:gender>Masculino</ACH2098:gender>
-            <ACH2098:password>1234</ACH2098:password>
-            <ACH2098:userID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000004</ACH2098:userID>
-            <ACH2098:userName>Martin L King</ACH2098:userName>
-        </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ACH2098#US000000003">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ACH2098/#User"/>
+        <loggedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</loggedIn>
+        <userLogin>joanad</userLogin>
+        <ACH2098:dateOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1980-09-05T00:00:00</ACH2098:dateOfBirth>
+        <ACH2098:gender>Feminino</ACH2098:gender>
+        <ACH2098:password>1234</ACH2098:password>
+        <ACH2098:userID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000003</ACH2098:userID>
+        <ACH2098:userName>Joana Darc</ACH2098:userName>
+    </owl:NamedIndividual>
 
 
 
-        <!-- http://www.semanticweb.org/ACH2098#US000000005 -->
+    <!-- http://www.semanticweb.org/ACH2098#US000000004 -->
 
-        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ACH2098#US000000005">
-            <rdf:type rdf:resource="http://www.semanticweb.org/ACH2098/#User"/>
-            <ACH2098:dateOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1979-01-02T00:00:00</ACH2098:dateOfBirth>
-            <ACH2098:gender>Feminino</ACH2098:gender>
-            <ACH2098:password>1234</ACH2098:password>
-            <ACH2098:userID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000005</ACH2098:userID>
-            <ACH2098:userName>Ada Lovelace</ACH2098:userName>
-            <userLogin>adaLove</userLogin>
-            <loggedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</loggedIn>
-        </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ACH2098#US000000004">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ACH2098/#User"/>
+        <loggedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</loggedIn>
+        <userLogin>martinlk</userLogin>
+        <ACH2098:dateOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1983-07-05T00:00:00</ACH2098:dateOfBirth>
+        <ACH2098:gender>Masculino</ACH2098:gender>
+        <ACH2098:password>1234</ACH2098:password>
+        <ACH2098:userID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000004</ACH2098:userID>
+        <ACH2098:userName>Martin L King</ACH2098:userName>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/ACH2098#US000000005 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ACH2098#US000000005">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ACH2098/#User"/>
+        <loggedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</loggedIn>
+        <userLogin>adaLove</userLogin>
+        <ACH2098:dateOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1979-01-02T00:00:00</ACH2098:dateOfBirth>
+        <ACH2098:gender>Feminino</ACH2098:gender>
+        <ACH2098:password>1234</ACH2098:password>
+        <ACH2098:userID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000005</ACH2098:userID>
+        <ACH2098:userName>Ada Lovelace</ACH2098:userName>
+    </owl:NamedIndividual>
+
 
 
     <!-- http://www.semanticweb.org/ACH2098#noTurn -->

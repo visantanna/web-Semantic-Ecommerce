@@ -11,7 +11,6 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		loadOwl();
 		SpringApplication.run(DemoApplication.class, args);
-		SparqlService.selectStore();
 		
 	}
 	

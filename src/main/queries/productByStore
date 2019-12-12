@@ -1,0 +1,28 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX foaf:  <http://xmlns.com/foaf/0.1#>
+PREFIX ep:  <http://www.semanticweb.org/ACH2098/>
+PREFIX eps:  <http://www.semanticweb.org/ACH2098>
+PREFIX epsx:  <http://www.semanticweb.org/ACH2098#>
+PREFIX epx:  <http://www.semanticweb.org/ACH2098/#>
+
+
+SELECT ?store  ?product ?storeID ?group  ?brand  ?brandName ?color ?productPhoto ?productID ?productName ?stockQuantity ?unitPrice ?weightInKg
+{
+?store rdf:type epx:Store; .
+?store ep:storeID ?storeID .
+?store ep:offers ?product .
+?product ep:belongsTo ?group .
+?product ep:isOfBrand ?brand .
+?brand ep:brandName ?brandName .
+?product epsx:color ?color .
+?product epsx:productPhoto ?productPhoto .
+?product ep:productID ?productID .
+?product ep:productName ?productName .
+?product ep:stockQuantity ?stockQuantity .
+?product ep:unitPrice ?unitPrice .
+?product ep:weightInKg ?weightInKg .
+}
+ORDER BY ASC(?store)

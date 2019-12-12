@@ -5,6 +5,7 @@ import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.ModelFactory;
 
 public class OwlService {
+	public static String owlUri = "http://www.semanticweb.org/ACH2098";
 	
 	public static void loadOwl() {
 		String path = "src/main/resources/EP_WS_RDFXML.owl" ;
