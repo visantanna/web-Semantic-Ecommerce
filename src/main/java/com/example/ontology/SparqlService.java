@@ -88,7 +88,6 @@ public class SparqlService {
 				"?store epsx:activity ?activity .\n" + 
 				"?activity epsx:CategoryName ?CategoryName .\n" + 
 				"?store ep:isLocatedIn ?isLocatedIn . \n" + 
-				"?store ep:offers ?offers . \n" + 
 				"?store ep:represents ?represents .\n" + 
 				"?store epsx:storeLink ?storeLink .\n" + 
 				"?store epsx:storePhoto ?storePhoto . \n" + 
