@@ -12,7 +12,6 @@ SELECT   ?store ?activity ?isLocatedIn ?represents ?storeLink ?storePhoto ?store
 ?store rdf:type epx:Store;
 epsx:activity ?activity;
 ep:isLocatedIn ?isLocatedIn;
-ep:offers ?offers;
 ep:represents ?represents;
 epsx:storeLink ?storeLink;
 epsx:storePhoto ?storePhoto;
