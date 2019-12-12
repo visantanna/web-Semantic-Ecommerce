@@ -263,6 +263,15 @@
 
 
 
+    <!-- http://www.semanticweb.org/ACH2098#storeDesc -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ACH2098#storeDesc">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ACH2098/#Store"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+
     <!-- http://www.semanticweb.org/ACH2098#storeLink -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ACH2098#storeLink">
@@ -1410,6 +1419,7 @@
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000001"/>
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000003"/>
         <ACH2098:represents rdf:resource="http://www.semanticweb.org/ACH2098#CP000000001"/>
+        <storeDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Encontre os melhores eletrônicos na MD Tecnologia. Os melhores Smartphones, TVs e acessórios de informática ao seu alcance.</storeDesc>
         <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja01.com</storeLink>
         <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja01.jpg</storePhoto>
         <ACH2098:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000001</ACH2098:storeID>
@@ -1427,6 +1437,7 @@
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000002"/>
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000004"/>
         <ACH2098:represents rdf:resource="http://www.semanticweb.org/ACH2098#CP000000001"/>
+        <storeDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A GZ Eletrônicos oferece as melhores novidades do mercado com produtos certificados. Smartphones, TVs e acessórios de informática, tudo em um só lugar e com os melhores preços.</storeDesc>
         <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja02.com</storeLink>
         <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja02.jpg</storePhoto>
         <ACH2098:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000002</ACH2098:storeID>
@@ -1443,6 +1454,7 @@
         <ACH2098:isLocatedIn rdf:resource="http://www.semanticweb.org/ACH2098#CR000000009"/>
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000005"/>
         <ACH2098:represents rdf:resource="http://www.semanticweb.org/ACH2098#CP000000002"/>
+        <storeDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Os melhores presentes de vestuário você encontra na Juliana Modas. Moda masculina, feminina e infantil. Bom gosto e qualidade de materiais ao seu alcance.</storeDesc>
         <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja03.com</storeLink>
         <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja03.jpg</storePhoto>
         <ACH2098:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000003</ACH2098:storeID>
@@ -1460,6 +1472,7 @@
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000007"/>
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000008"/>
         <ACH2098:represents rdf:resource="http://www.semanticweb.org/ACH2098#CP000000004"/>
+        <storeDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Brinkdeira oferece excelentes opções de brinquedos diversos para as crianças e jovens. Loja com produtos seguros e de alta resistência para todos se divertirem à vontade.</storeDesc>
         <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja04.com</storeLink>
         <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja04.jpg</storePhoto>
         <ACH2098:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000004</ACH2098:storeID>
@@ -1476,6 +1489,7 @@
         <ACH2098:isLocatedIn rdf:resource="http://www.semanticweb.org/ACH2098#CR000000012"/>
         <ACH2098:offers rdf:resource="http://www.semanticweb.org/ACH2098#PR000000006"/>
         <ACH2098:represents rdf:resource="http://www.semanticweb.org/ACH2098#CP000000003"/>
+        <storeDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Suzy Hair acredita que as grandes transformações começam com a sua autoestima. Por isso oferece diversos serviços de estética e beleza para os mais diversos públicos. Conheça nosso espaço.</storeDesc>
         <storeLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linkdaloja05.com</storeLink>
         <storePhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.enderecohospedagem.com/fotodaloja05.jpg</storePhoto>
         <ACH2098:storeID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">000000005</ACH2098:storeID>
@@ -1512,9 +1526,7 @@
         <ACH2098:userName>Ana Beatriz</ACH2098:userName>
     </owl:NamedIndividual>
 
-
-
-        <!-- http://www.semanticweb.org/ACH2098#US000000003 -->
+      <!-- http://www.semanticweb.org/ACH2098#US000000003 -->
 
         <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ACH2098#US000000003">
             <rdf:type rdf:resource="http://www.semanticweb.org/ACH2098/#User"/>
@@ -1554,6 +1566,7 @@
             <userLogin>adaLove</userLogin>
             <loggedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</loggedIn>
         </owl:NamedIndividual>
+
 
 
     <!-- http://www.semanticweb.org/ACH2098#noTurn -->

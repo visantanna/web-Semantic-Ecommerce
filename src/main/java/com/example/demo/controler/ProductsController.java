@@ -37,7 +37,7 @@ public class ProductsController {
         return view;
     }
     @GetMapping(value = "list")
-    public List<Product> listProductsFromStore(@RequestParam(value = "id", required = false)  String id){
+    public List<Product> listProductsFromStore(@RequestParam(value = "id", required = true)  String id){
     	List<Product> productsList = productBusiness.listProductsFromStore(id);
     	return productsList;
     }

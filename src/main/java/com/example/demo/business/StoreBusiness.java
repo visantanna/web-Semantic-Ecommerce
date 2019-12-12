@@ -17,7 +17,8 @@ public class StoreBusiness {
 	Store deal = new Store("af9bca5c1a4611ea978f2e728ce88125", "Roupas" , "Deal" , "Após décadas de bom desempenho, a empresa passou por uma profunda reestruturação no início dos anos 1990 e começou a operar no formato de loja de departamentos especializada em moda.", "http://www.madanretails.com/wp-content/uploads/2019/05/IMG_6628-870x580.jpg", "1ºAndar , Loja 13");
 	Store blackBull = new Store("4811d97a1a4711ea978f2e728ce88125", "Roupas" , "BlackBull" , "Desde o início, temos focado na oferta de roupas prontas para usar e de qualidade para todas as pessoas. Atualmente, estamos ampliando essa visão para oferecer roupas bonitas e sustentáveis a um nível de preço conveniente para todos.", "https://www.galeriadaarquitetura.com.br/Img/projeto/SF1/3034/blackbull4107.jpg", "2ºAndar , Loja 3");
 	Store lojaDoMusico = new Store("4e71e0d01a4711ea978f2e728ce88125", "Instrumentos" , "Loja do músico" , "Temos Grande disponibilidade de Acessórios como: Captadores, Pontes, Encordoamentos, Tarraxas, Capotrastes, Palhetas, Bocais, Afinadores, Clamps, Correias e etc.", "http://www.islmusic.com.br/wp-content/gallery/nova-importadora-sao-luiz/Fotos-Calend%C3%A1rio-Editadas-4-copiar.jpg", "2ºAndar , Loja 7");
-	ArrayList<Store> listStores = new ArrayList<Store>(Arrays.asList(nbaStore,surfTrip ,deal,blackBull,lojaDoMusico));
+	ArrayList<Store> listMockStores = new ArrayList<Store>(Arrays.asList(nbaStore,surfTrip ,deal,blackBull,lojaDoMusico));
+	ArrayList<Store> listStores = new ArrayList<Store>();
 	
 	public Store createNewStore(Store store) {
 		store.setId( UUID.randomUUID().toString());
@@ -25,7 +26,9 @@ public class StoreBusiness {
 		return store;
 	}
 	public List<Store> listStores(){
+		listStores.addAll(listMockStores);
 		listStores.addAll(SparqlService.selectStore());
+		
 		return listStores;
 	}
 }
