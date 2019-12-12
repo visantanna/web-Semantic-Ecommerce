@@ -20,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.example.demo.business.ProductsBusiness;
+import com.example.demo.business.StoreBusiness;
 import com.example.demo.controler.StoreController;
 import com.example.demo.dto.Product;
 import com.example.demo.dto.Store;
@@ -81,21 +82,22 @@ public class SparqlService {
 				"PREFIX epsx:  <http://www.semanticweb.org/ACH2098#>\n" + 
 				"PREFIX epx:  <http://www.semanticweb.org/ACH2098/#>\n" + 
 				"\n" + 
-				"SELECT   ?store ?activity ?isLocatedIn ?offers ?represents ?storeLink ?storePhoto ?storeID ?storeName ?storeDesc\n" + 
+				"SELECT   ?store ?activity ?CategoryName ?isLocatedIn ?offers ?represents ?storeLink ?storePhoto ?storeID ?storeName ?storeDesc\n" + 
 				"{\n" + 
-				"?store rdf:type epx:Store;\n" + 
-				"epsx:activity ?activity;\n" + 
-				"ep:isLocatedIn ?isLocatedIn;\n" + 
-				"ep:offers ?offers;\n" + 
-				"ep:represents ?represents;\n" + 
-				"epsx:storeLink ?storeLink;\n" + 
-				"epsx:storePhoto ?storePhoto;\n" + 
-				"ep:storeID ?storeID;\n" + 
-				"ep:storeName ?storeName;\n" + 
-				"epsx:storeDesc ?storeDesc\n" + 
+				"?store rdf:type epx:Store .\n" + 
+				"?store epsx:activity ?activity .\n" + 
+				"?activity epsx:CategoryName ?CategoryName .\n" + 
+				"?store ep:isLocatedIn ?isLocatedIn . \n" + 
+				"?store ep:offers ?offers . \n" + 
+				"?store ep:represents ?represents .\n" + 
+				"?store epsx:storeLink ?storeLink .\n" + 
+				"?store epsx:storePhoto ?storePhoto . \n" + 
+				"?store ep:storeID ?storeID . \n" + 
+				"?store ep:storeName ?storeName . \n" + 
+				"?store epsx:storeDesc ?storeDesc\n" + 
+				";\n" + 
 				"}\n" + 
-				"ORDER BY ASC(?store)\n" + 
-				"";
+				"ORDER BY ASC(?store)";
 	}
 	
 	
@@ -216,12 +218,13 @@ public class SparqlService {
 		
 		JSONArray arr = obj.getJSONObject("results").getJSONArray("bindings");
 		ArrayList<Store>  owlStores = new ArrayList<Store>();
+		owlStores.addAll(StoreBusiness.mockStores());
 		for (int i = 0; i < arr.length(); i++)
 		{
-			 String id = arr.getJSONObject(i).getJSONObject("storeID").getString("value");
-			 String type = arr.getJSONObject(i).getJSONObject("activity").getString("value");
-			 String name = arr.getJSONObject(i).getJSONObject("storeName").getString("value");
-			 String description = arr.getJSONObject(i).getJSONObject("storeDesc").getString("value");
+			String id = arr.getJSONObject(i).getJSONObject("storeID").getString("value");
+			String type = arr.getJSONObject(i).getJSONObject("CategoryName").getString("value");
+			String name = arr.getJSONObject(i).getJSONObject("storeName").getString("value");
+			String description = arr.getJSONObject(i).getJSONObject("storeDesc").getString("value");
 			String store_photo = arr.getJSONObject(i).getJSONObject("storePhoto").getString("value");
 			String location = arr.getJSONObject(i).getJSONObject("isLocatedIn").getString("value");
 			Store store = new Store(id, type, name, description, store_photo, location);
