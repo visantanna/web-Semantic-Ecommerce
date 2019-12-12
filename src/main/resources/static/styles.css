@@ -348,7 +348,7 @@ a.location {
   color: #88d;
 }
 a.location:hover{
-	text-decoration: underline;
+	text-decoration: underline !important;
 	color: #6c7
 }	
 
